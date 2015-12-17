@@ -51,7 +51,7 @@ def _lut(image, lut):
     elif image.mode in ("L", "RGB"):
         if image.mode == "RGB" and len(lut) == 256:
             lut = lut + lut + lut
-        return image.point(lut)
+        return image.point(lut, image.mode)
     else:
         raise IOError("not supported for this image mode")
 
